@@ -1,0 +1,79 @@
+/********************************************
+   SCRIBBLER:	TwoIslandS
+   WEBSITE:	http://twoislands.net
+   VERSION:	1.1.6 beta
+ *******************************************/
+
+/********************************************
+   HTML ELEMENTS
+********************************************/
+
+/* images */
+img {
+	border: 3px solid #555;
+}
+img.no-border {
+	border: none;
+}
+img.float-right {
+  margin: 5px 0px 5px 15px;
+}
+img.float-left {
+  margin: 5px 15px 5px 0px;
+}
+a img {
+  border: 3px solid #555;
+}
+a:hover img {
+  border: 3px solid #CCC !important; /* IE fix*/
+  border: 3px solid #555;
+}
+
+/***********************
+	  LAYOUT
+************************/
+#wrap {
+	background: #999999 url(../03_KALANTZIS_DIONYSIOS/images/bg_terminal.png) no-repeat  0 0;
+	background-cover:cover;
+	margin: 0;
+	text-align: left;
+  	border-color: #000000;
+	border-style: solid;
+	border-width: 1px 1px 5px 1px;
+}
+
+/* content-wrap */
+#content-wrap {
+	clear: both;
+	margin: 0; padding: 0;
+}
+
+/* box */
+.box {
+	margin: 10px 100px;
+}
+
+/* main */
+#main {
+	margin: 170px 0 0 30px;
+}
+#main .box {
+	margin-left: 0;
+}
+
+/* alignment classes */
+.float-left  { float: left; }
+.float-right {	float: right; }
+.align-left  {	text-align: left; }
+.align-right {	text-align: right; }
+
+/* additional classes */
+.clear {	clear: both; }
+.gray  {	color: #A0A0A0; }
+.comments {
+	text-align: right;
+	padding: 7px 15px;
+	margin: 20px 15px 15px 15px;
+	background: #0A1646;
+}
+
