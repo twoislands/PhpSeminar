@@ -15,36 +15,25 @@
 <h3>Comparison of two numbers</h3>
 
 <?php
-
-// $default_values = array ( array(23, 3), array(10, 10), array(5,2));
-$default_values = array ( array(23, 10, 5), array(3, 10, 2));
+$x = array(23, 10, 5);
+$y = array(3, 10, 2);
 $result_array = array('result', 'result', 'result');
-$first_number = $_POST['first_number'];
-$second_number = $_POST['second_number'];
 
-if (empty($first_number) || empty($second_number)) {
-echo  "You have not insert any nuymbers therefore I will procced on the comparison of the default values. <br><br />";
-for ($column = 0; $column < 2; $column++){
-for ($row = 0; $row < 3; $row ++){
-for ($i = 0; $i < 3; $i++){
-// if ($default_values[$row][$column] > $default_values[$row][$column]){
-// $result_array[$i]='The value on the left is greater that the value on the right';
-// }
-// else{
-// $result_array[$i]='The value on the left is equal or smaller that the value on the right';
-// }
+echo "Below you can see the results for Exercise 1 of Assignment 3. <br><br />";
+
+for ($i=0; $i<3; $i++){
+if ($x[$i]>$y[$i]){
+$result_array[$i] = 'The value on the left ('.$x[$i].') is greater that the value on the right ('.$y[$i].').';
 }
+else{
+$result_array[$i] = 'The value on the left ('.$x[$i].') is equal or smaller that the value on the right ('.$y[$i].').';
 }
+echo '|'.$x[$i].'|'.$y[$i].'|';	
+echo '=> '.$result_array[$i].'<br />';
 }
-for ($column = 0; $column < 2; $column++){
-for ($row = 0; $row < 3; $row ++){
-for ($i = 0; $i < 3; $i++){
-echo '|'.$default_values[$row][$column];	
-}
-echo '| => <br />';
-}
-}
-}
+
+//A goodbye message is printed on the client's browser.
+echo '<br><br />Thank you and goodbye!';
 ?>
 </body>
 </html>
