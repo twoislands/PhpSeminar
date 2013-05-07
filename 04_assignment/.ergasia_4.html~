@@ -1,0 +1,30 @@
+<!********************************************
+   SCRIBBLER:	TwoIslandS
+   WEBSITE:	http://twoislands.net
+   VERSION:	1.0 beta
+ *****************************************-->
+<?
+//create a new session
+  session_start();
+  ?>
+<html>
+  <head><title>Εργασία 4</title></head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <link rel="stylesheet" href="04_KALANTZIS_DIONYSIOS/styles/style.css" type="text/css" />
+  <body>
+
+      <div>
+	<h2>Exercise 1</h2>
+	<form action ="part_1.php" method="post">
+	  <p> Please fill out your details <br>
+	  First name: <input type="text" name="firstname"><br>
+	  Last name : <input type="text" name="surname"><br>
+	  E-mail: <input type="email" name="email"><br>
+	  Contact number: <input type="number" name="phone_number"><br>
+	  <input type="submit" value="Submit"> <input type="reset">
+	</form>
+      </div>
+
+  
+  </body>
+</html>

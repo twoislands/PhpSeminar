@@ -1,0 +1,48 @@
+<!********************************************
+   SCRIBBLER:	TwoIslandS
+   WEBSITE:	http://twoislands.net
+   VERSION:	1.0 beta
+ *****************************************-->
+<?
+//create a new session
+  session_start();
+  ?>
+<html>
+  <head><title>Εργασία 4</title></head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <link rel="stylesheet" href="04_KALANTZIS_DIONYSIOS/styles/style.css" type="text/css" />
+  <body>
+
+      <div>
+	<h2>Exercise 1</h2>
+	<form action ="part_1.php" method="post">
+	  <p> Please fill out your details <br>
+	  First name: <input type="text" name="firstname"><br>
+	  Last name : <input type="text" name="surname"><br>
+	  E-mail: <input type="email" name="email"><br>
+	  Contact number: <input type="number" name="phone_number"><br>
+	  <input type="submit" value="Submit"> <input type="reset">
+	</form>
+      </div>
+
+  
+  </body>
+</html>
+
+<?php require ('headers.php'); ?>
+<form id="styleform">
+
+<p><label for="styleselection">Style:</p>
+<p> Please choose your color preference <br>
+
+<p>Option 1: <input type="button" background-color="#124A07" name="style124A07"/></p>
+
+<!--<p style="background-color: rgb(18, 74, 7); background-position: initial initial; background-repeat: initial initial;"></p>-->
+
+<p>Option 2: <input type="button" color="#0D306D" name="style0D306D"/></p>
+
+<!--<p style="background-color: rgb(13, 48, 109); background-position: initial initial; background-repeat: initial initial;"></p>-->
+
+</form>
+
+<?php require ('footers.php'); ?>
