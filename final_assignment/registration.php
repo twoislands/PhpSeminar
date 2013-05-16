@@ -7,7 +7,7 @@
 <?php include ('header.php'); ?>
   <body>
       <h1>TwoIslandS' Address Book</h1>
-       <form action ="register.php" method="post">
+    <form action ="register.php" method="post">
 	  <p> Please fill out the following form to register with us.<br>
 	  <table border="0">
 	  <tr>

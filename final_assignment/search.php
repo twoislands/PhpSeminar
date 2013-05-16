@@ -6,6 +6,16 @@
 
 <?php include ('header.php');
 
+if(!isset($_SESSION['username']) || empty($_SESSION['username'])) { 
+header('location: invalid_access.php'); 
+}
+
+include ('mysql_connection&check.php');
+
+
+
+
+
 $password=sha1($_POST['password']);
 
 
