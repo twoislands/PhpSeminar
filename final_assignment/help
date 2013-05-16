@@ -1,0 +1,60 @@
+
+	  
+	  First name: <input type="text" required="" name="fname"><br>
+	  Last name: <input type="text" required="" name="sname"><br>
+	  Username: <input type="text" required="" name="username"><br>
+	  Password: <input type="password" required="" name="password"><br>
+	  Confirm password: <input type="password" required="" name="confirm_pass"><br>
+	  Email: <input type="email" required="" name="email"><br>
+	  <input type="submit" value="Submit"> <input type="reset">
+	  <?php
+	     if (isset($_SESSION['password'], $_SESSION['confirm_pass'])) {
+	      if ($_SESSION['password'] != $_SESSION['confirm_pass']) {
+		ob_start();
+		print '<script type="text/javascript">'; 
+		print 'alert("Passwords did not match")'; 
+		print '</script>';
+		ob_end_flush();  
+	      }
+	     }
+	  ?>
+	  
+	  
+	  
+	  <!--********************************************
+   SCRIBBLER:	TwoIslandS
+   WEBSITE:	http://twoislands.net
+   VERSION:	1.0 beta
+ *****************************************-->
+<?
+//create a new session
+  session_start();
+?>
+
+<?php include ('header.php'); ?>
+  <body>
+      <h1>TwoIslandS' Address Book</h1>
+       <form action ="register.php" method="post">
+	  <p> Please fill out the following form to register with us.<br>
+	  First name: <input type="text" required="" name="fname"><br>
+	  Last name: <input type="text" required="" name="sname"><br>
+	  Username: <input type="text" required="" name="username"><br>
+	  Password: <input type="password" required="" name="password"><br>
+	  Confirm password: <input type="password" required="" name="confirm_pass"><br>
+	  Email: <input type="email" required="" name="email"><br>
+	  <input type="submit" value="Submit"> <input type="reset">
+	  <?php
+	     if (isset($_SESSION['password'], $_SESSION['confirm_pass'])) {
+	      if ($_SESSION['password'] != $_SESSION['confirm_pass']) {
+		ob_start();
+		print '<script type="text/javascript">'; 
+		print 'alert("Passwords did not match")'; 
+		print '</script>';
+		ob_end_flush();  
+	      }
+	     }
+	  ?>
+	</form>
+	<?php include ('footer.php'); ?>
+	
+	INSERT INTO `USERS`(`username`, `password`, `fname`, `sname`, `email`) VALUES ([malakas],[malakas12],ilithios],xazos],[vlakasatacom])
