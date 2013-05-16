@@ -3,10 +3,6 @@
    WEBSITE:	http://twoislands.net
    VERSION:	1.0 beta
  *****************************************-->
-<?
-//create a new session
-  session_start();
-?>
 
 <?php include ('header.php'); ?>
       <h1>TwoIslandS' Address Book</h1>

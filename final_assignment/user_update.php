@@ -6,13 +6,7 @@
 
 <?php include ('header.php');
 	
-	if (isset($_POST['password'], $POST['confirm_pass'])) {
-		if ($_POST['password'] != $POST['confirm_pass']) {
-			echo '<script type="text/javascript">'; 
-			echo 'alert("Passwords did not match")'; 
-			echo '</script>';  
-		}
-	}
+$userID = $_SESSION['userID'];
 	  
 	include ('mysql_connection&check.php');
       $password=sha1($_POST['password']);

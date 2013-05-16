@@ -6,7 +6,7 @@
 
 <?php include ('header.php');
      
-include ('mysql_connection&check.php');
+	include ('mysql_connection&check.php');
 
     $result = mysqli_query($sql_connect,"SELECT * FROM USERS");
 
@@ -15,6 +15,8 @@ include ('mysql_connection&check.php');
     <th>UserID</th>
     <th>Firstname</th>
     <th>Lastname</th>
+	<th>Username</th>
+	<th>Password</th>
     </tr>";
 
     while($row = mysqli_fetch_array($result))
@@ -23,6 +25,8 @@ include ('mysql_connection&check.php');
       echo "<td>" . $row['userID'] . "</td>";
       echo "<td>" . $row['fname'] . "</td>";
       echo "<td>" . $row['sname'] . "</td>";
+	  echo "<td>" . $row['username'] . "</td>";
+	  echo "<td>" . $row['password'] . "</td>";
       echo "</tr>";
       }
     echo "</table>";

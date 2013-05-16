@@ -2,8 +2,8 @@
 -- version 3.5.2.2
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: May 15, 2013 at 06:45 AM
+-- Host: 127.0.0.1
+-- Generation Time: May 16, 2013 at 03:32 PM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -23,10 +23,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `CONTACTS`
+-- Table structure for table `contacts`
 --
 
-CREATE TABLE IF NOT EXISTS `CONTACTS` (
+CREATE TABLE IF NOT EXISTS `contacts` (
   `contactsID` int(11) NOT NULL AUTO_INCREMENT,
   `con_fname` varchar(15) NOT NULL,
   `con_sname` varchar(15) NOT NULL,
@@ -38,10 +38,10 @@ CREATE TABLE IF NOT EXISTS `CONTACTS` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `PRIVILAGES`
+-- Table structure for table `privilages`
 --
 
-CREATE TABLE IF NOT EXISTS `PRIVILAGES` (
+CREATE TABLE IF NOT EXISTS `privilages` (
   `privilagesID` int(11) NOT NULL AUTO_INCREMENT,
   `privilage_assossiation` int(11) NOT NULL,
   PRIMARY KEY (`privilagesID`)
@@ -50,48 +50,45 @@ CREATE TABLE IF NOT EXISTS `PRIVILAGES` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `PRIVILAGES_GROUPS`
+-- Table structure for table `privilages_groups`
 --
 
-CREATE TABLE IF NOT EXISTS `PRIVILAGES_GROUPS` (
+CREATE TABLE IF NOT EXISTS `privilages_groups` (
   `privilages_groupID` int(11) NOT NULL DEFAULT '0',
   `privilage` varchar(15) NOT NULL,
   PRIMARY KEY (`privilages_groupID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='PRIVILAGES table stores the privilage groups';
 
 --
--- Dumping data for table `PRIVILAGES_GROUPS`
+-- Dumping data for table `privilages_groups`
 --
 
-INSERT INTO `PRIVILAGES_GROUPS` (`privilages_groupID`, `privilage`) VALUES
+INSERT INTO `privilages_groups` (`privilages_groupID`, `privilage`) VALUES
 (0, 'admin'),
 (1, 'user');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `USERS`
+-- Table structure for table `users`
 --
 
-CREATE TABLE IF NOT EXISTS `USERS` (
+CREATE TABLE IF NOT EXISTS `users` (
   `userID` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(12) NOT NULL,
-  `password` varchar(8) NOT NULL,
+  `password` varchar(2000) NOT NULL,
   `fname` varchar(15) NOT NULL,
   `sname` varchar(15) NOT NULL,
   `email` varchar(20) NOT NULL,
   PRIMARY KEY (`userID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='USERS table stores the users information' AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='USERS table stores the users information' AUTO_INCREMENT=17 ;
 
 --
--- Dumping data for table `USERS`
+-- Dumping data for table `users`
 --
 
-INSERT INTO `USERS` (`userID`, `username`, `password`, `fname`, `sname`, `email`) VALUES
-(1, 'malakas', 'malakas1', 'ilithios', 'xazos', 'vlakas@malakia.com'),
-(2, 'dio123', '123e', 'dio', 'kal', 'asd@asd'),
-(3, 'kal123', '123..', 'kal', 'dio', 'asd@asd'),
-(4, 'qweasd', 'qwd', 'qwe', 'asd', 'qwd@qwd.com');
+INSERT INTO `users` (`userID`, `username`, `password`, `fname`, `sname`, `email`) VALUES
+(13, 'dion', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'kal', 'kalan', 'asd@asd.com');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
