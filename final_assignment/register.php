@@ -20,7 +20,7 @@
       
 	  if ($query_result !== FALSE){
 		echo "Thank you for registering";
-			echo '<meta http-equiv="refresh" content="3;url=home.php">';
+			echo '<meta http-equiv="refresh" content="3;url=members_site.php">';
 			echo "if not click here <a href='home.php'>Home</a >";
 	  }
       
