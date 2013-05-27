@@ -1,17 +1,12 @@
-<!--********************************************
+<?php 
+/*********************************************
    SCRIBBLER:	TwoIslandS
    WEBSITE:	http://twoislands.net
    VERSION:	1.0 beta
- *****************************************-->
+ *********************************************/
 
-<?php include ('header.php');
-/*
-include ('mysql_connection&check.php');
+include ('header.php');
 
-$result = mysqli_query($sql_connect,"SELECT * FROM USERS WHERE username='$_POST[username]' AND password='$password'");
-$admin_result = mysqli_query($sql_connect,"SELECT * FROM USERS WHERE username='$_POST[username]' AND password='$password'");
-//var_dump($result);
-*/
 ?>
     <form action ="search.php" method="post">
 	  <p> <h3>Who are you looking for?</h3>

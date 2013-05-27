@@ -1,10 +1,11 @@
-<!--********************************************
+<?php 
+/******************************************
    SCRIBBLER:	TwoIslandS
    WEBSITE:	http://twoislands.net
    VERSION:	1.0 beta
- *****************************************-->
+ *****************************************/
 
-<?php include ('header.php');
+include ('header.php');
 $search_fname = $_POST['search_fname'];
 $search_sname = $_POST['search_sname'];
 $search_phone = $_POST['search_phone'];
@@ -12,58 +13,57 @@ $search_address = $_POST['search_address'];
 
 include ('mysql_connection&check.php');
 
-if ( $search_phone != '' && $search_fname=='' )
+$no_q = FALSE;
 
-$q = "SELECT * FROM CONTACTS WHERE ";
+$q = "SELECT * FROM `CONTACTS` WHERE ";
 
-if ( $search_fname != '' ) 		
-	$q .= " fname LIKE '%$search_fname%' AND "; 
-  
-if ( $search_sname != '' )
-	$q .= " sname LIKE '%$search_sname%' AND "; 
-  
-if ( $search_phone != '' )
-	$q .= " phone='$search_phone' AND ";
-  
-if ( $search_address != '' )
-	$q .= " address LIKE '%$search_address%' AND ";  
-
-$q = substr($q, 0, -4);  	
-
-	
-echo $q;
-exit;
-
-
-
-
-$result = mysqli_query($sql_connect,$q);
-//var_dump($result);
-if ($row = mysqli_fetch_array($result)){
-	
-	if ($row['username'] == $_POST['username'])
-	{
-		
-		if ($row['password'] == sha1($_POST['password']))
-		{
-		
-			$_SESSION['username'] = $_POST['username'];
-			$_SESSION['password'] = $_POST['password'];
-			echo "Welcome back " . $row['username'].".";
-						echo "<br />";
-			echo '<meta http-equiv="refresh" content="3;url=members_site.php">';
-
-		}
-		else{
-			echo "Wrong password. please try again.";
-			echo '<meta http-equiv="refresh" content="3;url=login.php">';
-			}
+if ( $search_phone != '' || $search_fname!='' ){
+	$no_q = TRUE;
 	}
-	else{
-			header('location: invalid_access.php');
-			}
+if ( $search_fname != '' ){
+	$q .= " con_fname LIKE '%$search_fname%' AND "; 
+	}
+if ( $search_sname != '' ){
+	$q .= " con_sname LIKE '%$search_sname%' AND "; 
+	}
+if ( $search_phone != '' ){
+	$q .= " con_phone='$search_phone' AND ";
+	}
+if ( $search_address != '' ){
+	$q .= " con_address LIKE '%$search_address%' AND ";
+	}
+
+if ($no_q){
+
+	$q = substr($q, 0, -4);  
+
+	echo $q ."<br/>";
+	echo "<table border='1'>
+    <tr>
+    <th>ContactID</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+	<th>Phone</th>
+	<th>Address</th>
+    </tr>";
+
+	$result = mysqli_query($sql_connect, $q);
+    while($row = mysqli_fetch_array($result))
+      {
+      echo "<tr>";
+      echo "<td>" . $row['contactsID'] . "</td>";
+      echo "<td>" . $row['con_fname'] . "</td>";
+      echo "<td>" . $row['con_sname'] . "</td>";
+	  echo "<td>" . $row['con_phone'] . "</td>";
+	  echo "<td>" . $row['con_address'] . "</td>";
+      echo "</tr>";
+      }
+    echo "</table>";
+	
 }
 else{
-header('location: invalid_access.php');
+ echo "You need to insert at least Firstname or Phone number";
+ echo '<meta http-equiv="refresh" content="3;url=search_form.php">';
 }
+
 include ('footer.php'); ?>

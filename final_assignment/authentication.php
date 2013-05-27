@@ -1,20 +1,19 @@
-<!--********************************************
+<?php 
+/*********************************************
    SCRIBBLER:	TwoIslandS
    WEBSITE:	http://twoislands.net
    VERSION:	1.0 beta
- *****************************************-->
+ *********************************************/
 
-<?php include ('header.php');
+include ('header.php');
 
 $password=sha1($_POST['password']);
-
 
 include ('mysql_connection&check.php');
 
 $result = mysqli_query($sql_connect,"SELECT * FROM USERS WHERE username='$_POST[username]' AND password='$password'");
-//var_dump($result);
+
 if ($row = mysqli_fetch_array($result)){
-	
 	if ($row['username'] == $_POST['username'])
 	{
 		

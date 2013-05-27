@@ -1,21 +1,22 @@
-<!********************************************
+<?php 
+/*********************************************
    SCRIBBLER:	TwoIslandS
    WEBSITE:	http://twoislands.net
    VERSION:	1.0 beta
- *****************************************-->
+ *********************************************/
 
-<?php include ('header.php');
+include ('header.php');
 
 $user_no_photo = '../users_uploads/user_no_photo.png';
   
 if(!isset($_SESSION['username']) || empty($_SESSION['username'])) { 
-header('location: invalid_access.php'); 
+	header('location: invalid_access.php'); 
 }
 
 $username = $_SESSION['username'];
 include ('mysql_connection&check.php');
 
-    $result = mysqli_query($sql_connect,"SELECT * FROM USERS WHERE username='$username'");
+$result = mysqli_query($sql_connect,"SELECT * FROM USERS WHERE username='$username'");
 
     echo "<table border='1'>
     <tr>
@@ -52,6 +53,7 @@ include ('mysql_connection&check.php');
 	<p><h3>Clik here to upload a photo <a href="user_photo_upload_form.php">here.</a></h3></p>
 	<p><h3>If you like to update your details please clik <a href="user_update_form.php">here.</a></h3></p>
 	<p><h3>To delete your account clik <a href="delete_user.php">here.</a></h3></p>
+	<p><h3>To insert a contact follow the steps <a href="insert_contact_form.php">here.</a></h3></p>
 <?php
       
  	mysqli_close($sql_connect);

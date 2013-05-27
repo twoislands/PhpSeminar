@@ -1,10 +1,11 @@
-<!--********************************************
+<?php 
+/*********************************************
    SCRIBBLER:	TwoIslandS
    WEBSITE:	http://twoislands.net
    VERSION:	1.0 beta
- *****************************************-->
+ *********************************************/
 
-<?php include ('header.php'); ?>
+include ('header.php'); ?>
   <h1>TwoIslandS' Address Book</h1>
     <form action ="register.php" method="post">
 	  <p> Please fill out the following form to register with us.<br>

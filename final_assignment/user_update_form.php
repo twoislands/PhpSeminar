@@ -1,10 +1,11 @@
-<!********************************************
+<?php 
+/*********************************************
    SCRIBBLER:	TwoIslandS
    WEBSITE:	http://twoislands.net
    VERSION:	1.0 beta
- *****************************************-->
+ *********************************************/
 
-<?php include ('header.php');
+include ('header.php');
       <form action ="user_update.php" method="post">
 	  <p> Fill out the following form to update your details.<br>
 	  <table border="0">

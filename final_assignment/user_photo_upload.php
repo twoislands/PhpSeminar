@@ -1,10 +1,11 @@
-<!********************************************
+<?php 
+/*********************************************
    SCRIBBLER:	TwoIslandS
    WEBSITE:	http://twoislands.net
    VERSION:	1.0 beta
- *****************************************-->
+ *********************************************/
 
-<?php include ('header.php'); 
+include ('header.php'); 
 $todir = 'users_uploads/';
 
   if ($_FILES["file"]["error"] > 0)
@@ -19,8 +20,7 @@ $todir = 'users_uploads/';
 	
 	include ('mysql_connection&check.php');
 
-    mysqli_query($sql_connect, "UPDATE USERS SET user_image='".$_FILES['file']['name']."'
-WHERE userID=".$_SESSION['userID']);
+    mysqli_query($sql_connect, "UPDATE USERS SET user_image='".$_FILES['file']['name']."'WHERE userID=".$_SESSION['userID']);
     }
 
 include ('footer.php'); ?>

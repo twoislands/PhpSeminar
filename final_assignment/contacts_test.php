@@ -8,25 +8,25 @@
 include ('header.php');
 include ('mysql_connection&check.php');
 
-$result = mysqli_query($sql_connect,"SELECT * FROM USERS");
+$result = mysqli_query($sql_connect,"SELECT * FROM CONTACTS");
 
     echo "<table border='1'>
     <tr>
-    <th>UserID</th>
+    <th>ContactID</th>
     <th>Firstname</th>
     <th>Lastname</th>
-	<th>Username</th>
-	<th>Password</th>
+	<th>Phone</th>
+	<th>Address</th>
     </tr>";
 
     while($row = mysqli_fetch_array($result))
       {
       echo "<tr>";
-      echo "<td>" . $row['userID'] . "</td>";
-      echo "<td>" . $row['fname'] . "</td>";
-      echo "<td>" . $row['sname'] . "</td>";
-	  echo "<td>" . $row['username'] . "</td>";
-	  echo "<td>" . $row['password'] . "</td>";
+      echo "<td>" . $row['contactsID'] . "</td>";
+      echo "<td>" . $row['con_fname'] . "</td>";
+      echo "<td>" . $row['con_sname'] . "</td>";
+	  echo "<td>" . $row['con_phone'] . "</td>";
+	  echo "<td>" . $row['con_address'] . "</td>";
       echo "</tr>";
       }
     echo "</table>";

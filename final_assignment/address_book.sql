@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2013 at 03:32 PM
+-- Generation Time: May 27, 2013 at 02:55 PM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -33,7 +33,15 @@ CREATE TABLE IF NOT EXISTS `contacts` (
   `con_phone` varchar(10) NOT NULL,
   `con_address` varchar(30) NOT NULL,
   PRIMARY KEY (`contactsID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='CONTACTS table stores the data of the contacts' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='CONTACTS table stores the data of the contacts' AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `contacts`
+--
+
+INSERT INTO `contacts` (`contactsID`, `con_fname`, `con_sname`, `con_phone`, `con_address`) VALUES
+(1, 'dio', 'kal', '2610123456', 'Dokimi 8 Str, Patra'),
+(2, 'kostas', 'kostas', '1234567890', 'kostas, patra');
 
 -- --------------------------------------------------------
 
@@ -80,15 +88,16 @@ CREATE TABLE IF NOT EXISTS `users` (
   `fname` varchar(15) NOT NULL,
   `sname` varchar(15) NOT NULL,
   `email` varchar(20) NOT NULL,
+  `user_image` varchar(500) DEFAULT NULL COMMENT 'stores the users image',
   PRIMARY KEY (`userID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='USERS table stores the users information' AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='USERS table stores the users information' AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`userID`, `username`, `password`, `fname`, `sname`, `email`) VALUES
-(13, 'dion', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'kal', 'kalan', 'asd@asd.com');
+INSERT INTO `users` (`userID`, `username`, `password`, `fname`, `sname`, `email`, `user_image`) VALUES
+(1, 'qwe', '056eafe7cf52220de2df36845b8ed170c67e23e3', 'qwe', 'qwe', 'qwe@qwe.com', NULL);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

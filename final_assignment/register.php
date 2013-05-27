@@ -1,10 +1,11 @@
-<!********************************************
+<?php 
+/*********************************************
    SCRIBBLER:	TwoIslandS
    WEBSITE:	http://twoislands.net
    VERSION:	1.0 beta
- *****************************************-->
+ *********************************************/
 
-<?php include ('header.php');
+include ('header.php');
 	
 	if (isset($_POST['password'], $POST['confirm_pass'])) {
 		if ($_POST['password'] != $POST['confirm_pass']) {
